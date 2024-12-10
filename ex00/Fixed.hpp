@@ -12,5 +12,5 @@ public:
 	void setRawBits(int const raw);
 private:
 	int _value;
-	static const int point;
+	static const int _point;
 };

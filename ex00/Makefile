@@ -1,7 +1,7 @@
 # Author: tischmid (timo42@proton.me)
 
 # config
-NAME := harlFilter
+NAME := a.out
 # change to c for C projects and cpp for C++ projects
 # source files must still be specified with their extension
 EXT := cpp

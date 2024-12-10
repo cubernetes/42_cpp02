@@ -2,7 +2,7 @@
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _value()
+Fixed::Fixed() : _value(), _point(8)
 {
 	std::cout << "Default constructor called\n";
 }
@@ -16,7 +16,8 @@ Fixed::Fixed(const Fixed& fixed)
 Fixed& Fixed::operator=(const Fixed& fixed)
 {
 	std::cout << "Copy assignment operator called\n";
-	_value = fixed.getRawBits();
+	if (this != &fixed)
+		_value = fixed.getRawBits();
 	return *this;
 }
 Fixed::~Fixed()
