@@ -14,7 +14,7 @@ Fixed::Fixed(const int intVal) : _value(intVal << _point)
 	std::cout << "Int constructor called\n";
 }
 
-Fixed::Fixed(const float floatVal) : _value(roundf(floatVal * (1 << _point)))
+Fixed::Fixed(const float floatVal) : _value(static_cast<int>(roundf(floatVal * (1 << _point))))
 {
 	std::cout << "Float constructor called\n";
 }

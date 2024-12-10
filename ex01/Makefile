@@ -16,9 +16,9 @@ CFLAGS :=
 CFLAGS += -O2
 CFLAGS += -Wall
 CFLAGS += -Wextra
-# CFLAGS += -Wshadow
-# CFLAGS += -pedantic
-# CFLAGS += -Wconversion
+CFLAGS += -Wshadow
+CFLAGS += -pedantic
+CFLAGS += -Wconversion
 CFLAGS += -Wunreachable-code
 CFLAGS += -std=c++98
 CFLAGS += -Werror
