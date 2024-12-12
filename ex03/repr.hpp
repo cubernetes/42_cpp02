@@ -16,18 +16,7 @@ inline string repr(const T& value) {
 }
 
 // repr template specializations
-template <>
-inline string repr(const string& value) {
-	return "std::string(\"" + value + "\")";
-}
-
-template <>
-inline string repr(const char* const& value) {
-	return string("\"") + value + "\"";
-}
-
-template <>
-inline string repr(const char& value) {
-	return string("'") + value + "'";
-}
+template <> inline string repr(const string& value) { return "std::string(\"" + value + "\")"; }
+template <> inline string repr(const char* const& value) { return string("\"") + value + "\""; }
+template <> inline string repr(const char& value) { return string("'") + value + "'"; }
 // </GENERATED>

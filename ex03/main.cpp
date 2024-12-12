@@ -1,27 +1,50 @@
 #include <iostream>
 
 #include "Fixed.hpp"
+#include "Point.hpp"
+
+using std::cout;
+
+bool bsp(const Point a, const Point b, const Point c, const Point point);
+
+void check(const Point a, const Point b, const Point c, const Point p) {
+	if (bsp(a, b, c, p))
+		cout << "Point " << p << " is inside the triangle " << a << ", " << b << ", " << c << '\n';
+	else
+		cout << "Point " << p << " is NOT inside the triangle " << a << ", " << b << ", " << c << '\n';
+}
 
 int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Point a, b, c, p;
 
-	std::cout << "Should print 0\n";
-	std::cout << a << std::endl;
-	std::cout << "Should print 0.00390625\n";
-	std::cout << ++a << std::endl;
-	std::cout << "Should print 0.00390625\n";
-	std::cout << a << std::endl;
-	std::cout << "Should print 0.00390625\n";
-	std::cout << a++ << std::endl;
-	std::cout << "Should print 0.0078125\n";
-	std::cout << a << std::endl;
+	a = Point(1, 0);
+	b = Point(3, 0);
+	c = Point(2, 3);
+	p = Point(1, 0);
+	check(a, b, c, p);
 
-	std::cout << "Should print 10.1016\n";
-	std::cout << b << std::endl;
+	a = Point(1, 0);
+	b = Point(3, 0);
+	c = Point(2, 3);
+	p = Point(2, 0);
+	check(a, b, c, p);
 
-	std::cout << "Should print 10.1016\n";
-	std::cout << Fixed::max( a, b ) << std::endl;
+	a = Point(1, 0);
+	b = Point(3, 0);
+	c = Point(2, 3);
+	p = Point(2.0f, 0.1f);
+	check(a, b, c, p);
 
+	a = Point(1, 0);
+	b = Point(3, 0);
+	c = Point(2, 3);
+	p = Point(2, 1);
+	check(a, b, c, p);
+
+	a = Point(0, 0);
+	b = Point(0, 0);
+	c = Point(0, 0);
+	p = Point(0, 0);
+	check(a, b, c, p);
 	return 0;
 }

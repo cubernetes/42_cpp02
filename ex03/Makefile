@@ -55,6 +55,8 @@ SRC :=
 
 vpath %.$(EXT) .
 SRC += Fixed.cpp
+SRC += Point.cpp
+SRC += bsp.cpp
 SRC += main.cpp
 
 # object vars
