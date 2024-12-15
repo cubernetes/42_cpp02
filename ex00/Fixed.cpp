@@ -2,7 +2,7 @@
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _value(), _point(8)
+Fixed::Fixed() : _value()
 {
 	std::cout << "Default constructor called\n";
 }
